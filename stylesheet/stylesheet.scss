@@ -121,7 +121,7 @@ body {
 	left: 0;
 	border-bottom: solid 1px var(--color-secondary);
     filter: invert(100%);
-	animation: border_anim 2.5s ease-in-out forwards;
+	animation: border_anim 5s ease-in-out forwards;
 }
 .border2:before{
 	content: '';
