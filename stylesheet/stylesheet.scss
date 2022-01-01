@@ -24,14 +24,39 @@ $gap: 1em;
 }
 .font2{
     font-size: 2em;
+    opacity: 0;
+    transform: translate3d(0,1rem, 0);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
+.font21{
+    font-size: 2em;
+}
+
 .font3{
     font-size: 1em;
+    opacity: 0;
+    transform: translate3d(0,1rem, 0);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
 .font4{
     font-size: 0.5em;
+    opacity: 0;
+    transform: translate3d(0,1rem, 0);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
-
+.font5 {
+    font-size: 1.5em;
+    opacity: 0;
+    transform: translate3d(0,1rem, 0);
+    transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+.font6 {
+    font-size:5em;
+}
+.active {
+    opacity: 1;
+    transform: none;
+  }
 * {
     margin: 0%;
     padding: 0%;
@@ -46,7 +71,6 @@ body {
 }
 .page1 {
     padding: $margin;
-    
     display: grid;
     grid-template-columns: 1fr 1fr 2em;
     background-color: var(--color-secondary);
@@ -170,19 +194,6 @@ body {
     grid-template-rows: auto;
     margin: $margin;
     place-items: center;
-    // div:nth-child(1){
-    //     position: relative;
-    // }div:nth-child(3){
-    //     position: relative;
-    // }div:nth-child(5){
-    //     position: relative;
-    // }div:nth-child(7){
-    //     position: relative;
-    // }div:nth-child(9){
-    //     position: relative;
-    // }div:nth-child(11){
-    //     position: relative;
-    // }
     div:nth-child(odd) {
             position: relative;
             margin-bottom: 0.3em;
@@ -191,7 +202,41 @@ body {
         position: relative;
         margin-bottom: 2em;
 }
+    .testimonials {
+        width: 60em;
+        text-align: center;
+    }
+}
+.services {
+    width: 90%;
+    display: grid;
+    place-items: end;
 
+}
+.carousel-height {
+    width: 20em;
+}
+.cv {
+    display: grid;
+    grid-template-columns: 40em 20em;
+    column-gap: 2em;
+    place-items: center;
+    // height: 30em;
+    img {
+        width: 20em;
+    }
+    div:nth-child(1) {
+        place-items: end;
+    }
+}
+.carousel-text {
+    display: grid;
+    grid-template-columns: 40em 20em;
+    // column-gap: 2em;
+    place-items: center;
+    img {
+        width: 20em;
+    }
 }
 .social {
     display: flex;
@@ -199,20 +244,24 @@ body {
     width: 100%;
     align-content: space-between;
     font-size: 1.5em;
-    
+    :hover {
+        transform: scale(1.1);
+        transition: 0.1s ease-in;
+        color: red;
+        cursor: pointer;
+      }
+    a {
+        color: var(--font-color-secondary);
+        text-decoration: none;
+    }
 }
 .border3 {
     border-bottom: 0.5px solid var(--color-secondary);
     margin-top: 1em;
     padding: 0.5em;
+    width: 100%;
 }
-.font5 {
-    font-size: 1.5em;
-}
-.font6 {
-    font-size: 5em;
-    font-weight: 100;
-}
+
 // $black: #000 !default;
 // $border-radius: 0.25rem !default;
 // $box-shadow: 0 0.5rem 1rem rgba($black, 0.15) !default;
@@ -226,11 +275,12 @@ body {
 // switch theme
 /* The switch - the box around the slider */
 .switch {
-  width: 60px;
-  position: absolute;
+  width: 30px;
+  position: fixed;
   top: 1%;
   right: 1%;
-  height: 34px;
+  height: 18px;
+  z-index: 1;
 }
 
 /* Hide default HTML checkbox */
@@ -253,11 +303,12 @@ body {
   transition: 0.4s;
 }
 
+
 .slider:before {
   position: absolute;
   content: "";
-  height: 40px;
-  width: 40px;
+  height: 20px;
+  width: 20px;
   left: 0px;
   bottom: 4px;
   top: 0;
@@ -280,9 +331,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(24px);
-  -ms-transform: translateX(24px);
-  transform: translateX(24px);
+  -webkit-transform: translateX(11px);
+  -ms-transform: translateX(11px);
+  transform: translateX(11px);
   background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -459,5 +510,120 @@ input:checked + .slider:before {
     display:block;
     margin-right:0;
     font-weight:600
+  }
+}
+
+@media (max-width:480px) {
+    $font1: 3em;
+    $font2: 2em;
+    $font3: 1em;
+    $font4: 0.5em;
+    $margin: 0 5%;
+    $font6: 0.3em;
+    $gap: 1em;
+.font1 {
+    font-size: 2.1em;
+}
+
+.font2 {
+    font-size: 1.4em;
+}
+.font6 {
+    font-size: 2.1em;
+}
+.font21{
+    font-size: 1.4em;
+}
+.page1 {
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--color-secondary);
+    color: var(--font-color-secondary);
+    place-items: center;
+    height: fit-content;
+    overflow: hidden;
+    // height: 100vh;
+    font-size: var();
+    row-gap: 1em;
+    div:nth-child(1) {
+        grid-column: 1/1;
+    }div:nth-child(2) {
+        grid-column: 1/1;
+    }div:nth-child(3) {
+        grid-column: 1/1;
+        position: relative;
+        height: 18em;
+        width: 18em;
+        background-color: var(--color-primary);
+        // filter: invert(100%);
+        border-radius: 50%;
+        overflow-x: hidden;
+    }div:nth-child(4) {
+        // grid-column: 1/1;
+        // gap: 3em;
+        display: none;
+        // appearance: h;
+    }div:nth-child(5) {
+        grid-column: 1/1;
+        width: 100%;
+        text-align: center;
+        position: relative;
+        margin-bottom: 0.3em;
+    }
+}
+.page2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 3em;
+    margin: $margin;
+    place-items: center;
+    text-align: center;
+    div:nth-child(1){
+        align-self: start;
+    }
+}
+.page3 {
+    display: grid;
+    grid-template-rows: auto;
+    margin: 0 3%;
+    place-items: center;
+    text-align: center;
+    div:nth-child(odd) {
+            position: relative;
+            margin-bottom: 0.3em;
+    }
+    div:nth-child(even) {
+        position: relative;
+        margin-bottom: 2em;
+}
+    .testimonials {
+        width: 20em;
+        text-align: center;
+    }
+}
+.cv {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 2em;
+    place-items: center;
+    // height: 30em;
+    img {
+        width: 20em;
+    }
+    div:nth-child(1) {
+        place-items: end;
+    }
+}
+.spaan {
+    position: absolute;
+    white-space: nowrap;
+    // right: 10%;
+    top: 20%;
+    left: 10%;
+    color: var(--color-primary);
+    filter: invert(100%);
+    font-family: 'Raleway', sans-serif;
+    font-size: 7.2em;
   }
 }

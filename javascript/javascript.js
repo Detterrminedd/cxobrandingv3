@@ -24,26 +24,3 @@ function toggleTheme() {
     }
 })();
 
-let observedElements = document.querySelectorAll(
-    ".page2"
-  );
-  
-  const options = {threshold: 0.8};
-  
-  const inViewCallback = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("border2");
-      } 
-      else {
-        entry.target.classList.remove("border2");
-      }
-    });
-  };
-  let observer = new IntersectionObserver(inViewCallback, options);
-  
-  observedElements.forEach((element) => {
-    let dataDelay = element.getAttribute("data-delay");
-    element.style.transitionDelay = dataDelay + "ms";
-    observer.observe(element);
-  });

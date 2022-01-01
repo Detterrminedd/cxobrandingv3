@@ -20,14 +20,43 @@
 
 .font2 {
   font-size: 2em;
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.font21 {
+  font-size: 2em;
 }
 
 .font3 {
   font-size: 1em;
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
 }
 
 .font4 {
   font-size: 0.5em;
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.font5 {
+  font-size: 1.5em;
+  opacity: 0;
+  transform: translate3d(0, 1rem, 0);
+  transition: opacity 0.5s ease-in, transform 0.5s ease-in;
+}
+
+.font6 {
+  font-size: 5em;
+}
+
+.active {
+  opacity: 1;
+  transform: none;
 }
 
 * {
@@ -193,6 +222,46 @@ body {
   margin-bottom: 2em;
 }
 
+.page3 .testimonials {
+  width: 60em;
+  text-align: center;
+}
+
+.services {
+  width: 90%;
+  display: grid;
+  place-items: end;
+}
+
+.carousel-height {
+  width: 20em;
+}
+
+.cv {
+  display: grid;
+  grid-template-columns: 40em 20em;
+  column-gap: 2em;
+  place-items: center;
+}
+
+.cv img {
+  width: 20em;
+}
+
+.cv div:nth-child(1) {
+  place-items: end;
+}
+
+.carousel-text {
+  display: grid;
+  grid-template-columns: 40em 20em;
+  place-items: center;
+}
+
+.carousel-text img {
+  width: 20em;
+}
+
 .social {
   display: flex;
   flex-direction: column;
@@ -201,28 +270,33 @@ body {
   font-size: 1.5em;
 }
 
+.social :hover {
+  transform: scale(1.1);
+  transition: 0.1s ease-in;
+  color: red;
+  cursor: pointer;
+}
+
+.social a {
+  color: var(--font-color-secondary);
+  text-decoration: none;
+}
+
 .border3 {
   border-bottom: 0.5px solid var(--color-secondary);
   margin-top: 1em;
   padding: 0.5em;
-}
-
-.font5 {
-  font-size: 1.5em;
-}
-
-.font6 {
-  font-size: 5em;
-  font-weight: 100;
+  width: 100%;
 }
 
 /* The switch - the box around the slider */
 .switch {
-  width: 60px;
-  position: absolute;
+  width: 30px;
+  position: fixed;
   top: 1%;
   right: 1%;
-  height: 34px;
+  height: 18px;
+  z-index: 1;
 }
 
 /* Hide default HTML checkbox */
@@ -247,8 +321,8 @@ body {
 .slider:before {
   position: absolute;
   content: "";
-  height: 40px;
-  width: 40px;
+  height: 20px;
+  width: 20px;
   left: 0px;
   bottom: 4px;
   top: 0;
@@ -270,7 +344,7 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(24px);
+  transform: translateX(11px);
   background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
   background-repeat: no-repeat;
   background-position: center;
@@ -440,6 +514,110 @@ input:checked + .slider:before {
     display: block;
     margin-right: 0;
     font-weight: 600;
+  }
+}
+
+@media (max-width: 480px) {
+  .font1 {
+    font-size: 2.1em;
+  }
+  .font2 {
+    font-size: 1.4em;
+  }
+  .font6 {
+    font-size: 2.1em;
+  }
+  .font21 {
+    font-size: 1.4em;
+  }
+  .page1 {
+    padding: 0 5%;
+    display: grid;
+    grid-template-columns: 1fr;
+    background-color: var(--color-secondary);
+    color: var(--font-color-secondary);
+    place-items: center;
+    height: fit-content;
+    overflow: hidden;
+    font-size: var();
+    row-gap: 1em;
+  }
+  .page1 div:nth-child(1) {
+    grid-column: 1/1;
+  }
+  .page1 div:nth-child(2) {
+    grid-column: 1/1;
+  }
+  .page1 div:nth-child(3) {
+    grid-column: 1/1;
+    position: relative;
+    height: 18em;
+    width: 18em;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    overflow-x: hidden;
+  }
+  .page1 div:nth-child(4) {
+    display: none;
+  }
+  .page1 div:nth-child(5) {
+    grid-column: 1/1;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin-bottom: 0.3em;
+  }
+  .page2 {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-top: 3em;
+    margin: 0 5%;
+    place-items: center;
+    text-align: center;
+  }
+  .page2 div:nth-child(1) {
+    align-self: start;
+  }
+  .page3 {
+    display: grid;
+    grid-template-rows: auto;
+    margin: 0 3%;
+    place-items: center;
+    text-align: center;
+  }
+  .page3 div:nth-child(odd) {
+    position: relative;
+    margin-bottom: 0.3em;
+  }
+  .page3 div:nth-child(even) {
+    position: relative;
+    margin-bottom: 2em;
+  }
+  .page3 .testimonials {
+    width: 20em;
+    text-align: center;
+  }
+  .cv {
+    display: grid;
+    grid-template-columns: auto;
+    row-gap: 2em;
+    place-items: center;
+  }
+  .cv img {
+    width: 20em;
+  }
+  .cv div:nth-child(1) {
+    place-items: end;
+  }
+  .spaan {
+    position: absolute;
+    white-space: nowrap;
+    top: 20%;
+    left: 10%;
+    color: var(--color-primary);
+    filter: invert(100%);
+    font-family: 'Raleway', sans-serif;
+    font-size: 7.2em;
   }
 }
 /*# sourceMappingURL=stylesheet.css.map */
