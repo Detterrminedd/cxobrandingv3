@@ -537,8 +537,8 @@ input:checked + .slider:before {
     background-color: var(--color-secondary);
     color: var(--font-color-secondary);
     place-items: center;
-    height: fit-content;
     overflow: hidden;
+    height: 100vh;
     font-size: var();
     row-gap: 1em;
   }
